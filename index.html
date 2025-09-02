@@ -2,256 +2,119 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Atividade Prática de HTML - [Seu Nome]</title>
+    <title>Formulário de Cadastro - [Seu Nome]</title>
 </head>
 <body>
 
-    <header>
-        <h1>Atividade de HTML Semântico e Acessibilidade</h1>
-    </header>
-
-    <nav>
-        <h2>Menu Principal</h2>
-        <ul>
-            <li><a href="#listas">Ver Listas</a></li>
-            <li><a href="#imagens">Ver Imagens</a></li>
-            <li><a href="#tabelas">Ver Tabelas</a></li>
-            
-            <li><a href="sobre.html">Página Sobre</a></li>
-            
-            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">Documentação HTML</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section id="listas">
-            <h2>Seção de Listas</h2>
+        <h1>Formulário de Inscrição</h1>
+        <p>Preencha os campos abaixo para se inscrever.</p>
+
+        <form action="#" method="post">
+
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <p>
+                    <label for="nome">Nome Completo:</label><br>
+                    <input type="text" id="nome" name="nome" required maxlength="100">
+                </p>
+
+                <p>
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+                </p>
+
+                <p>
+                    <label for="telefone">Telefone:</label><br>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" title="O formato deve ser (XX) XXXXX-XXXX">
+                </p>
+
+                <p>
+                    <label for="nascimento">Data de Nascimento:</label><br>
+                    <input type="date" id="nascimento" name="nascimento">
+                </p>
+
+                <p>
+                    <label for="idade">Idade:</label><br>
+                    <input type="number" id="idade" name="idade" min="16" max="120">
+                </p>
+                
+                <p>
+                    <label for="site">Site Pessoal:</label><br>
+                    <input type="url" id="site" name="site" placeholder="https://seusite.com">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferências de Estudo</legend>
+
+                <p>Turno de Estudo:</p>
+                <input type="radio" id="turno-manha" name="turno" value="manha" required>
+                <label for="turno-manha">Manhã</label><br>
+                <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                <label for="turno-tarde">Tarde</label><br>
+                <input type="radio" id="turno-noite" name="turno" value="noite">
+                <label for="turno-noite">Noite</label><br>
+
+                <p>Áreas de Interesse:</p>
+                <input type="checkbox" id="interesse-prog" name="interesses" value="programacao">
+                <label for="interesse-prog">Programação</label><br>
+                <input type="checkbox" id="interesse-bd" name="interesses" value="banco_de_dados">
+                <label for="interesse-bd">Banco de Dados</label><br>
+                <input type="checkbox" id="interesse-redes" name="interesses" value="redes">
+                <label for="interesse-redes">Redes</label><br>
+                <input type="checkbox" id="interesse-design" name="interesses" value="design">
+                <label for="interesse-design">Design</label><br>
+
+                <p>
+                    <label for="curso">Selecione seu Curso:</label><br>
+                    <select id="curso" name="curso" required>
+                        <option value="">-- Por favor, escolha uma opção --</option>
+                        <option value="informatica">Informática</option>
+                        <option value="eletrotecnica">Eletrotécnica</option>
+                        <option value="mecanica">Mecânica</option>
+                        <option value="administracao">Administração</option>
+                    </select>
+                </p>
+            </fieldset>
             
-            <article>
-                <h3>(a) Lista de Supermercado (Não Ordenada)</h3>
-                <ul>
-                    <li>Arroz</li>
-                    <li>Feijão</li>
-                    <li>Café</li>
-                    <li>Macarrão</li>
-                    <li>Azeite</li>
-                </ul>
-            </article>
+            <fieldset>
+                <legend>Dados de Acesso e Outros</legend>
 
-            <article>
-                <h3>(b) Passos para Trocar uma Lâmpada (Ordenada)</h3>
-                <ol>
-                    <li>Desligue o interruptor de energia.</li>
-                    <li>Use uma escada para alcançar a lâmpada.</li>
-                    <li>Desenrosque a lâmpada queimada com cuidado.</li>
-                    <li>Enrosque a lâmpada nova.</li>
-                    <li>Ligue o interruptor para testar.</li>
-                </ol>
-            </article>
+                <p>
+                    <label for="senha">Crie uma Senha:</label><br>
+                    <input type="password" id="senha" name="senha" required minlength="6">
+                </p>
+                <p>
+                    <label for="confirmar-senha">Confirme sua Senha:</label><br>
+                    <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+                </p>
+
+                <p>
+                    <label for="horario">Horário de Atendimento Preferido:</label><br>
+                    <input type="time" id="horario" name="horario">
+                </p>
+
+                <p>
+                    <label for="mensagem">Mensagem:</label><br>
+                    <textarea id="mensagem" name="mensagem" rows="5" cols="40" aria-label="Digite sua mensagem ou observação aqui"></textarea>
+                </p>
+                
+                <p>
+                    <label for="curriculo">Envie seu currículo (PDF):</label><br>
+                    <input type="file" id="curriculo" name="curriculo" accept=".pdf">
+                </p>
+            </fieldset>
             
-            <article>
-                <h3>(c) Glossário de Termos (Definição)</h3>
-                <dl>
-                    <dt>HTML</dt>
-                    <dd>HyperText Markup Language - Linguagem de marcação para estruturar o conteúdo da web.</dd>
-                    <dt>Semântica</dt>
-                    <dd>O uso de tags HTML que transmitem o significado do conteúdo, tanto para navegadores quanto para tecnologias assistivas.</dd>
-                    <dt>Acessibilidade</dt>
-                    <dd>A prática de tornar sites utilizáveis pelo maior número possível de pessoas, incluindo aquelas com deficiências.</dd>
-                </dl>
-            </article>
-        </section>
-
-        <section id="imagens">
-            <h2>Seção de Imagens</h2>
-
-            <article>
-                <h3>(a) Imagem com Caminho Relativo</h3>
-                <figure>
-                    <img src="beatles.webp" alt="A banda The Beatles atravessando a rua na famosa faixa de pedestres de Abbey Road." width="400">
-                    <figcaption>Fig. 1 - The Beatles na capa do álbum Abbey Road (imagem local).</figcaption>
-                </figure>
-            </article>
-
-            <article>
-                <h3>(b) Imagem com Caminho Absoluto</h3>
-                <figure>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Tatiana_Ayazo_-_GIMP.png/1200px-Tatiana_Ayazo_-_GIMP.png" alt="O mascote do software GIMP, um coiote chamado Wilber, segurando um pincel na boca." width="300">
-                    <figcaption>Fig. 2 - Mascote do software GIMP (imagem externa).</figcaption>
-                </figure>
-            </article>
-        </section>
-
-        <section id="tabelas">
-            <h2>Seção de Tabelas</h2>
-
-            <article>
-                <h3>Tabela de Educação Profissional (2014)</h3>
-                <table border="1" width="500" cellpadding="5" cellspacing="0">
-                    <caption>Matrículas na Educação Profissional em 2014.</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Localidade</th>
-                            <th scope="col">Total de Matrículas</th>
-                            <th scope="col">Crescimento (Novas Matrículas)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Brasil</th>
-                            <td>1.741.528</td>
-                            <td>11,7%</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Santa Catarina</th>
-                            <td>67.325</td>
-                            <td>3,1%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <article>
-                <h3>Tabela do IDEB (2013-2017)</h3>
-                <table border="1" width="600" cellpadding="5" cellspacing="0">
-                    <caption>Notas do IDEB da rede pública (Brasil x Santa Catarina).</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Nível de Ensino</th>
-                            <th scope="col">Localidade</th>
-                            <th scope="col">2013</th>
-                            <th scope="col">2015</th>
-                            <th scope="col">2017</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">Anos Iniciais</th>
-                            <th scope="row">Brasil</th>
-                            <td>4,7</td>
-                            <td>5,2</td>
-                            <td>5,5</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">SC</th>
-                            <td>5,5</td>
-                            <td>5,8</td>
-                            <td>6,0</td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">Anos Finais</th>
-                            <th scope="row">Brasil</th>
-                            <td>4,4</td>
-                            <td>4,7</td>
-                            <td>5,0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">SC</th>
-                            <td>5,1</td>
-                            <td>5,5</td>
-                            <td>5,7</td>
-                        </tr>
-                        <tr>
-                            <th scope="rowgroup" rowspan="2">Ensino Médio</th>
-                            <th scope="row">Brasil</th>
-                            <td>3,9</td>
-                            <td>4,3</td>
-                            <td>4,7</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">SC</th>
-                            <td>4,4</td>
-                            <td>4,7</td>
-                            <td>5,2</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-
-            <article>
-                <h3>Discografia Selecionada dos Beatles</h3>
-                <table border="1" width="80%" cellpadding="10" cellspacing="0">
-                    <caption>Alguns álbuns icônicos dos Beatles.</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Álbum</th>
-                            <th scope="col">Ano</th>
-                            <th scope="col">Capa</th>
-                            <th scope="col">Observações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Revolver</th>
-                            <td>1966</td>
-                            <td>
-                                <figure>
-                                    <img src="foto beat.webp" alt="Capa do álbum Revolver" width="100">
-                                    <figcaption>Álbum psicodélico.</figcaption>
-                                </figure>
-                            </td>
-                            <td>Considerado um divisor de águas na carreira da banda.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Sgt. Pepper's Lonely Hearts Club Band</th>
-                            <td>1967</td>
-                            <td>
-                                <figure>
-                                    <img src="foto color.jpg" alt="Capa do álbum Sgt. Pepper's" width="100">
-                                    <figcaption>Capa icônica e colorida.</figcaption>
-                                </figure>
-                            </td>
-                            <td>Um dos álbuns mais influentes da história do rock.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Abbey Road</th> 
-                            <td>1969</td>
-                            <td>
-                                <figure>
-                                    <img src="foto pista.webp" alt="Capa do álbum Abbey Road" width="100">
-                                    <figcaption>Banda na faixa de pedestres.</figcaption>
-                                </figure>
-                            </td>
-                            <td>O último álbum gravado pela banda.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </article>
-        </section>
-
-        <article>
-            <h2>The Beatles: Uma Revolução na Música</h2>
-            <p>The Beatles foi uma banda de rock britânica, formada em Liverpool em 1960. Com uma formação composta por John Lennon, Paul McCartney, George Harrison e Ringo Starr, o grupo se tornou um dos mais influentes e bem-sucedidos da história. Sua música evoluiu do rock and roll dos anos 50 para uma vasta gama de estilos, incorporando elementos da música clássica e psicodelia.</p>
-            <figure>
-                <img src="foto face.webp" alt="Os quatro membros dos Beatles em uma foto em preto e branco de 1964, sorrindo." width="500">
-                <figcaption>The Beatles em uma aparição televisiva em 1964.</figcaption>
-            </figure>
-            <p>O impacto cultural da banda, conhecido como "Beatlemania", foi um fenômeno global. Eles não apenas dominaram as paradas de sucesso, mas também influenciaram a moda, o cinema e as atitudes sociais da juventude da época. O legado dos Beatles perdura até hoje, com suas canções sendo regravadas e apreciadas por novas gerações.</p>
-        </article>
-
-        <section>
-            <h2>Explicando Caminhos: <i>Relativos</i> vs. <b>Absolutos</b></h2>
             <p>
-                Em HTML, um <b>caminho</b> é o endereço que usamos para apontar para um arquivo, seja uma imagem, outra página ou um script. Existem dois tipos: <b>absoluto</b> e <i>relativo</i>.
-                <br><br>
-                Um <b>caminho absoluto</b> é uma URL completa que aponta para um local exato na internet. Ele começa com o protocolo (<code>https://</code>) e funciona de qualquer lugar.
-                <br>
-                <b>Exemplo (link):</b> <code>&lt;a href="https://www.google.com"&gt;</code>
-                <br>
-                <b>Exemplo (imagem):</b> <code>&lt;img src="https://site.com/logo.png"&gt;</code>
-                <br><br>
-                Já um <i>caminho relativo</i> aponta para um arquivo em relação à página atual. É como dar instruções a partir de onde você está. Por exemplo, <code>img/foto.png</code> significa "entre na pasta <sup>img</sup> e encontre o arquivo <sub>foto.png</sub>".
-                <br>
-                <b>Exemplo (link):</b> <code>&lt;a href="contato.html"&gt;</code> (procura o arquivo na mesma pasta)
-                <br>
-                <b>Exemplo (imagem):</b> <code>&lt;img src="img/beatles.jpg"&gt;</code> (procura na pasta `img`)
+                <button type="submit">Enviar Inscrição</button>
             </p>
-        </section>
-
+        </form>
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 - Direitos autorais. Desenvolvido por: [Danubia Pascoal Da Silva].</p>
+        <p>[Danubia Pascoal]</p>
     </footer>
 
 </body>
